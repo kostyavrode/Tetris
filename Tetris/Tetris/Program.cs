@@ -10,24 +10,18 @@ namespace Tetris
     {
         static void Main(string[] args)
         {
-
-            
-
             int x1 = 2;
             int y1 = 3;
             char c1 = '^';
 
 
-            Drow(x1, y1, c1);
-            Console.ReadLine();
-        }
-        static void Drow(int x,int y,char symbol)
-        {
-            Console.SetWindowSize(40, 30);
-            Console.SetBufferSize(40, 30);
-            Console.SetCursorPosition(x, y);
-            Console.Write(symbol);
+            Square square = new Square(x1, y1, c1);
+            square.Draw();
+            square.Hide();
+            square.Move(Direction.LEFT);
 
+            square.Draw();
+            Console.ReadLine();
         }
     }
 }
